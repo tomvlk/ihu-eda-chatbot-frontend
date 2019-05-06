@@ -1,0 +1,43 @@
+
+.chat-input-box {
+  width: 100%;
+  height: 100%;
+  padding: 2px;
+
+  .chat-input-text-container {
+    width: 78%;
+    height: 100%;
+    float: left;
+
+    textarea {
+      resize: none;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      height: 80%;
+      width: 100%;
+    }
+  }
+  .chat-input-button-container {
+    width: 20%;
+    height: 100%;
+    float: right;
+
+    button {
+      height: 46px;
+      width: calc(100% - 3px);
+      background: #5da657;
+      border: 2px solid rgba(255, 255, 255, 0.5);
+
+      i {
+        font-size: 32px;
+        color: white;
+      }
+    }
+    button:hover {
+      background: darken(#5da657, 8);
+    }
+    button:active {
+      box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.4);
+    }
+  }
+}

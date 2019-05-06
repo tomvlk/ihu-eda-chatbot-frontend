@@ -1,0 +1,43 @@
+
+.header-top {
+  height: 46px;
+  width: 100%;
+  background: url("../assets/img/header_top_bg.png") repeat-x center top #fff;
+}
+
+.header {
+  //margin-bottom: 10px;
+  margin-top: 18px;
+
+  .header-inner {
+
+    .brand {
+      float: left;
+      display: block;
+    }
+
+    .header-search {
+      float: right;
+      display: block;
+    }
+
+    img {
+      margin-top: -3.5%;
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .header {
+    .header-inner {
+      .brand {
+        float: none;
+        display: block;
+        text-align: center;
+      }
+      .header-search {
+        display: none;
+      }
+    }
+  }
+}

@@ -8,6 +8,7 @@ import { BoxComponent } from './box/box.component';
 import { ChatHistoryComponent } from './chat/chat-history/chat-history.component';
 import { ChatInputComponent } from './chat/chat-input/chat-input.component';
 import {HttpClientModule} from "@angular/common/http";
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import {HttpClientModule} from "@angular/common/http";
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

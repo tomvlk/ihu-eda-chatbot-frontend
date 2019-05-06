@@ -1,3 +1,29 @@
-<p>
-  chat works!
-</p>
+
+<div class="chat-toggle-box" [hidden]="showChat">
+  <button type="button" class="chat-toggle-button" (click)="toggleChat()">
+    <i class="fas fa-comment"></i>
+  </button>
+</div>
+
+
+<div class="chat-outer" [hidden]="! showChat">
+  <div class="chat-box">
+    <div class="chat-title-bar">
+      <div class="title">
+        IHU Chat
+      </div>
+
+      <div class="toolbar">
+        <button type="button" (click)="toggleChat()">
+          <i class="fas fa-window-minimize"></i>
+        </button>
+      </div>
+    </div>
+    <div class="chat-history-outer">
+      <app-chat-history [hidden]="! chatService.session"></app-chat-history>
+    </div>
+    <div class="chat-input-outer">
+      <app-chat-input [hidden]="! chatService.session"></app-chat-input>
+    </div>
+  </div>
+</div>

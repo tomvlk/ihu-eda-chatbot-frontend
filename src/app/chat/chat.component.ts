@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ChatService} from "../chat.service";
 
 @Component({
   selector: 'app-chat',
@@ -6,10 +7,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./chat.component.scss']
 })
 export class ChatComponent implements OnInit {
+  public showChat: boolean = false;
 
-  constructor() { }
+  constructor(
+    private chatService: ChatService
+  ) { }
 
-  ngOnInit() {
+  async ngOnInit() {
+    await this.chatService.createSession();
+    await this.toggleChat();
   }
 
+  async toggleChat() {
+    this.showChat = ! this.showChat;
+    if (this.showChat && this.chatService.session.messages.length == 0) {
+      await this.chatService.message('Hi', true);
+    }
+  }
 }

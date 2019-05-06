@@ -1,3 +1,21 @@
-<p>
-  chat-history works!
-</p>
+
+<div class="chat-history" *ngIf="chatService.session">
+  <div class="chat-scrollable" #scrollBox>
+    <div *ngFor="let message of chatService.session.messages"
+         class="message"
+         [class.message-local]="message.owner.type === 'local'"
+         [class.message-remote]="message.owner.type === 'remote'">
+      <div class="message-avatar" *ngIf="message.owner.type === 'remote'"></div>
+      <div class="message-text">
+        {{message.message}}
+      </div>
+      <div class="clearfix"></div>
+    </div>
+
+    <div class="chat-is-typing" [class.hide]="! chatService.session.remoteParticipant.isTyping">
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+  </div>
+</div>
