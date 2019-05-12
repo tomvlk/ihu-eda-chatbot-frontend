@@ -37,6 +37,12 @@
         padding: 8px;
         border-radius: 4px;
       }
+      .message-attachment img, .message-attachment-image {
+        max-width: 300px;
+        max-height: 250px;
+        margin-left: 40px;
+        border-radius: 6px;
+      }
     }
     .message.message-remote {
       margin-right: 20%;

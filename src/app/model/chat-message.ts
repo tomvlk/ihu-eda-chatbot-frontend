@@ -22,4 +22,11 @@ export class ChatMessage {
       this.message = message;
     }
   }
+
+  public get attachment() {
+    if (this.owner && this.owner.type === 'remote' && this.message.indexOf('contact') !== -1) {
+      return 'map';
+    }
+    return false;
+  }
 }

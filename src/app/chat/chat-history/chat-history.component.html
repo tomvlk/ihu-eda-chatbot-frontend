@@ -6,10 +6,13 @@
          [class.message-local]="message.owner.type === 'local'"
          [class.message-remote]="message.owner.type === 'remote'">
       <div class="message-avatar" *ngIf="message.owner.type === 'remote'"></div>
-      <div class="message-text">
-        {{message.message}}
-      </div>
+      <div class="message-text" [innerHTML]="message.message | linkParsing"></div>
       <div class="clearfix"></div>
+      <div class="message-attachment" *ngIf="message.attachment">
+        <a href="https://goo.gl/maps/bX6RGJ6CFAtzKh1x8" target="_blank" *ngIf="message.attachment === 'map'">
+          <img src="assets/img/map.jpg" >
+        </a>
+      </div>
     </div>
 
     <div class="chat-is-typing" [class.hide]="! chatService.session.remoteParticipant.isTyping">

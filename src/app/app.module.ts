@@ -9,6 +9,8 @@ import { ChatHistoryComponent } from './chat/chat-history/chat-history.component
 import { ChatInputComponent } from './chat/chat-input/chat-input.component';
 import {HttpClientModule} from "@angular/common/http";
 import {FormsModule} from "@angular/forms";
+import { LinkParsingPipe } from './link-parsing.pipe';
+import { SafeHtmlPipe } from './safe-html.pipe';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import {FormsModule} from "@angular/forms";
     ChatComponent,
     BoxComponent,
     ChatHistoryComponent,
-    ChatInputComponent
+    ChatInputComponent,
+    LinkParsingPipe,
+    SafeHtmlPipe
   ],
   imports: [
     BrowserModule,
