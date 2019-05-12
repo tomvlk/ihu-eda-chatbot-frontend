@@ -15,7 +15,7 @@ export class ChatComponent implements OnInit {
 
   async ngOnInit() {
     await this.chatService.createSession();
-    await this.toggleChat();
+    // await this.toggleChat();
   }
 
   async toggleChat() {
